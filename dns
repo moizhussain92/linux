@@ -1,0 +1,51 @@
+subnet 100.64.5.0 netmask 255.255.255.0 {
+	option domain-name "dundermifflin.com";
+	option domain-name-servers 100.64.5.4;
+	option routers 100.64.5.1;	
+	pool {
+	range 100.64.5.2 100.64.5.5; 
+	}
+	}
+subnet 10.21.32.0 netmask 255.255.255.0 {
+	option domain-name "dundermifflin.com";
+	option domain-name-servers 100.64.5.4;
+	option routers 10.21.32.1;
+}
+	group {
+
+		host machinef {
+				hardware ethernet 00:50:56:a0:13:4a;
+				fixed-address 100.64.5.5;
+				option host-name "machinef.dundermifflin.com";
+				}
+		}
+	group {
+		host machineb {
+				hardware ethernet 00:50:56:a0:28:0a;
+				fixed-address 100.64.5.2;		
+				option host-name "machineb.dundermifflin.com";
+				}
+		}
+
+	group {
+		host machinec {
+				hardware ethernet 00:50:56:a0:79:f5;
+				fixed-address 100.64.5.3;
+				option host-name "machinec.dundermifflin.com";
+				}
+		}
+	group {
+		host machined {
+				hardware ethernet 00:50:56:a0:33:ac;
+				fixed-address 100.64.5.4;
+				option host-name "machined.dundermifflin.com";
+				}
+		}
+	group {
+
+		host machinee {
+				hardware ethernet 00:50:56:a0:1d:82;
+				fixed-address 10.21.32.2;
+				option host-name "machinee.dundermifflin.com";
+				}
+		}	
